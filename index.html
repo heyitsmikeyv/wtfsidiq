@@ -24,12 +24,33 @@
         }
 
         div.maincontent {
+            position: relative;
+            /*display: flex;*/
             border-style: dashed;
             border-color: #444;
-            text-align: center;
             padding: 10px;
+            height: 400px;
+            width: 95%;
+            text-align: center;
+        }
+        div.maincontent table {
+          height: 100%;
+          width: 100%;
+        }
+        div.maincontent button {
+
+            font-size: 18px;
         }
 
+        tr.output {
+          height: calc(100% - 50px)
+          padding-left: 10px;
+          padding-right: 10px;
+
+        }
+        tr.generator {
+          height: 50px;
+        }
         .footer {
             line-height: 1.5;
             padding-top: 30px;
@@ -119,58 +140,6 @@
   background-color: #3a80c1
 }
 
-.resp-sharing-button--google {
-  background-color: #dd4b39
-}
-
-.resp-sharing-button--google:hover {
-  background-color: #c23321
-}
-
-.resp-sharing-button--linkedin {
-  background-color: #0077b5
-}
-
-.resp-sharing-button--linkedin:hover {
-  background-color: #046293
-}
-
-.resp-sharing-button--email {
-  background-color: #777
-}
-
-.resp-sharing-button--email:hover {
-  background-color: #5e5e5e
-}
-
-.resp-sharing-button--xing {
-  background-color: #1a7576
-}
-
-.resp-sharing-button--xing:hover {
-  background-color: #114c4c
-}
-
-.resp-sharing-button--whatsapp {
-  background-color: #25D366
-}
-
-.resp-sharing-button--whatsapp:hover {
-  background-color: #1da851
-}
-
-.resp-sharing-button--hackernews {
-background-color: #FF6600
-}
-.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
-
-.resp-sharing-button--vk {
-  background-color: #507299
-}
-
-.resp-sharing-button--vk:hover {
-  background-color: #43648c
-}
 
 .resp-sharing-button--facebook {
   background-color: #3b5998;
@@ -236,13 +205,21 @@ background-color: #FF6600
         <h1>What the fuck should I do in quarantine?</h1>
     </header>
     <div class="maincontent">
-        <div id="outputdiv">
-          <h3 id="outputheader">Click that button to get this show on the road.</h3>
-        </div>
-        <div id="generator" style="text-align:center;">
-            <button type="button" id="clickme" onclick="generate()" >This better be good.</button>
-        </div>
-
+      <table>
+        <tr class="output">
+          <td>
+              <div id="outputdiv">
+                <h3 id="outputheader">Click that button to get this show on the road.</h3>
+              </div>
+          </td>
+        <tr class="generator">
+          <td>
+              <div id="generator" style="text-align:center;">
+                  <button type="button" id="clickme" onclick="generate()" >This better be good.</button>
+              </div>
+          </td>
+        </tr>
+        </table>
     </div>
     <div class="footer">
       <div id="sociallinks" style="text-align:center">
