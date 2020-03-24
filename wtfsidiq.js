@@ -1,9 +1,19 @@
 function generate(){
   outputheader = document.getElementById("outputheader")
 
+  if (ideas.length == 0){
+    outputheader.innerHTML = "You burned through all my ideas. I'm going to start repeating them now. Or come back later, I'll add more here and there.";
+    getideas();
+    return;
+  }
+
   // Modify the output div's contents to show a random idea
-  idea = ideas[Math.floor(Math.random()*ideas.length)];
+  i = Math.floor(Math.random()*ideas.length)
+  idea = ideas[i];
   outputheader.innerHTML = idea
+
+  // Remove the selected idea from the list
+  ideas.splice(i, 1)
 }
 
 function getideas(){
